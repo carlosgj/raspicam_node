@@ -680,9 +680,9 @@ int main(int argc, char **argv){
 	dynamic_reconfigure::Server<raspicam_node::CameraConfig>::CallbackType f;
 	f = boost::bind(&reconfigure_callback, _1, _2);
 	server.setCallback(f);
-
+	
+	start_capture(&state_srv);
 	ros::spin();
-
 	close_cam(&state_srv);
 	return 0;
 }
