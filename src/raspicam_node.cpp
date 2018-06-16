@@ -660,7 +660,7 @@ int main(int argc, char **argv){
 	/* Info manager */
 	camera_info_manager::CameraInfoManager c_info_man(n, camera_name, camera_info_url);
 	get_status(&state_srv);
-
+	init_cam(&state_srv);
 	if (!c_info_man.loadCameraInfo(camera_info_url)) {
 		ROS_INFO("Calibration file missing. Camera not calibrated");
 	} else {
